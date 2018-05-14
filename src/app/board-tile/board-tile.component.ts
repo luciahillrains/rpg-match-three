@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {BoardService} from '../board.service';
 
 @Component({
   selector: 'app-board-tile',
@@ -7,11 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BoardTileComponent implements OnInit {
 	@Input()
+	index:number = 0;
+
 	value:number = 0;
 
-  constructor() { }
+  constructor(private boardService:BoardService) { }
 
   ngOnInit() {
+  	this.value = this.boardService.getTileFromIndex(this.index);
   }
 
   generateClass() {
@@ -36,5 +40,7 @@ export class BoardTileComponent implements OnInit {
   	return clz;
 
   }
+
+
 
 }

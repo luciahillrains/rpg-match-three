@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-
-  constructor() { }
+	BOARD_TILES:number = 64;
+	arrayWithSixtyFour:number[] = [];
+  constructor() {
+    	for(let i = 0; i < this.BOARD_TILES; i++) {
+  			this.arrayWithSixtyFour[i] = i;
+  		}
+   }
 
   ngOnInit() {
+
   }
 
 }

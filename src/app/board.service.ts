@@ -21,7 +21,17 @@ export class BoardService {
   	}
   }
 
+  getTileFromIndex(index:number) {
+  	let x = Math.floor(index/this.BOARD_SIZE)
+ 	let y = index - (x * this.BOARD_SIZE);
+ 	console.log("index is "+index+" x,y="+x+","+y);
+ 	return this.board[x][y];
+  }
+
+
   private generateRandomNumber() {
   	return Math.floor(Math.random() * 5);
   }
+
+
 }
