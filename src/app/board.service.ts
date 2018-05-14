@@ -16,8 +16,12 @@ export class BoardService {
   	for(let i = 0; i < this.BOARD_SIZE; i++) {
   		this.board[i] = [];
   		for(let j = 0; j < this.BOARD_SIZE; j++) {
-  			this.board[i][j] = 0;
+  			this.board[i][j] = this.generateRandomNumber();
   		}
   	}
+  }
+
+  private generateRandomNumber() {
+  	return Math.floor(Math.random() * 5);
   }
 }
